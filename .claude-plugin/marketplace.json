@@ -1,0 +1,16 @@
+{
+  "name": "imageat",
+  "owner": { "name": "imageat", "url": "https://imageat.com" },
+  "metadata": {
+    "description": "Official imageat skills for Claude Code."
+  },
+  "plugins": [
+    {
+      "name": "imageat",
+      "source": "./",
+      "description": "Generate and edit AI images and videos with the imageat API, poll video jobs and check the account balance.",
+      "homepage": "https://imageat.com/skills",
+      "category": "media"
+    }
+  ]
+}

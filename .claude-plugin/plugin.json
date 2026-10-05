@@ -1,0 +1,9 @@
+{
+  "name": "imageat",
+  "description": "Generate and edit AI images and videos with the imageat API from Claude Code.",
+  "author": { "name": "imageat", "url": "https://imageat.com" },
+  "homepage": "https://imageat.com/skills",
+  "repository": "https://github.com/incendies/imageat-skills",
+  "license": "MIT",
+  "keywords": ["image-generation", "video-generation", "ai-images", "imageat"]
+}
