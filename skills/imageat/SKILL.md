@@ -33,6 +33,7 @@ The response contains `url` (one image) or `urls` (several), hosted on cdn.image
 Models (live list: `GET https://imageat.com/api/v1/models/images`):
 
 - `nano-banana-pro` (Nano Banana Pro): High-fidelity generation and editing with up to 4K output. From $0.40 / image.
+- `nano-banana-2.1` (Nano Banana 2.1): Google's newest Nano Banana: up to 4K, extreme 8:1 to 1:8 ratios, up to 14 references, and optional web search grounding. From $0.16 / image.
 - `nano-banana-2` (Nano Banana 2): Fast, cost-efficient generation for iterative creative work. From $0.16 / image.
 - `gpt-image-2.5` (GPT Image 2.5): OpenAI's newest image model: five quality tiers, scoped edits, and transparent cut-outs. Add gpt-image-2.5-sunburst for the slower, finer-detail variant. From $0.02 / image.
 - `gpt-image-2` (GPT Image 2): Precise instruction following with selectable quality tiers. From $0.02 / image.
@@ -40,6 +41,8 @@ Models (live list: `GET https://imageat.com/api/v1/models/images`):
 
 - GPT Image models accept `quality`; GPT Image 2.5 also takes `xhigh`/`max` and
   `transparentBackground` (needs png or webp output).
+- Nano Banana 2.1 takes up to 14 `images`, extreme ratios (`8:1` to `1:8`, plus `auto`)
+  and `enableWebSearch` for grounding in live web results.
 - Editing / reference-guided generation: pass public URLs or base64 data URLs in `images`.
 - Other fields: `aspectRatio`, `resolution` (1K, 2K, 4K), `outputFormat` (png, jpeg, webp), `numImages`.
 
