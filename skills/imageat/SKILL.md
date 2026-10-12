@@ -36,6 +36,7 @@ Models (live list: `GET https://imageat.com/api/v1/models/images`):
 - `nano-banana-2.1` (Nano Banana 2.1): Google's newest Nano Banana: up to 4K, extreme 8:1 to 1:8 ratios, up to 14 references, and optional web search grounding. From $0.16 / image.
 - `nano-banana-2` (Nano Banana 2): Fast, cost-efficient generation for iterative creative work. From $0.16 / image.
 - `gpt-image-2.5` (GPT Image 2.5): OpenAI's newest image model: five quality tiers, scoped edits, and transparent cut-outs. Add gpt-image-2.5-sunburst for the slower, finer-detail variant. From $0.02 / image.
+- `midjourney-v8` (Midjourney V8): Midjourney V8.2 with stylize, chaos, weird, and style references. Every run returns 4 images; native 2K HD optional. From $0.18 / 4 images.
 - `gpt-image-2` (GPT Image 2): Precise instruction following with selectable quality tiers. From $0.02 / image.
 - `seedream-5.0-pro` (Seedream 5 Pro): High-fidelity ByteDance generation and reference-guided editing. From $0.14 / image.
 
@@ -43,6 +44,9 @@ Models (live list: `GET https://imageat.com/api/v1/models/images`):
   `transparentBackground` (needs png or webp output).
 - Nano Banana 2.1 takes up to 14 `images`, extreme ratios (`8:1` to `1:8`, plus `auto`)
   and `enableWebSearch` for grounding in live web results.
+- Midjourney V8 (`midjourney-v8`) always returns 4 images per run (read `urls`; `numImages`
+  is ignored) and takes ~2 minutes. `resolution` is 1K or 2K (native HD); optional `stylize`
+  (0-1000), `chaos` (0-100), `weird` (0-3000), `seed` and `styleReferenceUrl`.
 - Editing / reference-guided generation: pass public URLs or base64 data URLs in `images`.
 - Other fields: `aspectRatio`, `resolution` (1K, 2K, 4K), `outputFormat` (png, jpeg, webp), `numImages`.
 
@@ -84,9 +88,12 @@ Models (live list: `GET https://imageat.com/api/v1/models/videos`):
 
 - `minimax-h3-max` (MiniMax H3 Max): Text, image, or first/last-frame video; 5–15s · 480p/768p; From $0.25.
 - `seedance25` (Seedance 2.5): Text, image, reference, or frame-controlled video; 4–30s · 480p/720p; From $0.83.
+- `midjourney-v8` (Midjourney V8): Image-to-video, 4 clips per run; 4 × 5s · 480p/720p; From $0.18.
 - `pixverse` (Pixverse V6): Text/image video with optional audio; 1–15s · up to 1080p; From $0.09/sec.
 
 - Image-to-video: pass `imageUrl` (first frame), or `firstFrameUrl` + `lastFrameUrl`.
+- `midjourney-v8` is image-to-video only: `imageUrl` is required, `resolution` is 480p or 720p,
+  `motion` is low or high. Each run returns 4 five-second clips in `urls`.
 
 ## Check balance
 
