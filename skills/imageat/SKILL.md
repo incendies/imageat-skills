@@ -98,7 +98,7 @@ Models (live list: `GET https://imageat.com/api/v1/models/videos`):
 ## Check balance
 
 `GET https://imageat.com/api/v1/credits` returns the account's API balance in USD (and spendable web
-credits for subscribers).
+credits, which are spent first).
 
 ## Errors
 
