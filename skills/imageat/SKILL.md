@@ -86,6 +86,7 @@ Stop when `status` is `completed` (read `url`) or `failed`. Cancel with `POST ht
 
 Models (live list: `GET https://imageat.com/api/v1/models/videos`):
 
+- `wan3` (Wan 3.0): Text, image, first/last-frame or reference-image video; 2–30s · 480p/720p/1080p · audio; From $0.20.
 - `minimax-h3-max` (MiniMax H3 Max): Text, image, or first/last-frame video; 5–15s · 480p/768p; From $0.25.
 - `seedance25` (Seedance 2.5): Text, image, reference, or frame-controlled video; 4–30s · 480p/720p; From $0.83.
 - `midjourney-v8` (Midjourney V8): Image-to-video, 4 clips per run; 4 × 5s · 480p/720p; From $0.18.
