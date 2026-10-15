@@ -1,5 +1,5 @@
-# Pulls the published SKILL.md from imageat.com, which is generated from the live
-# API model catalog, and commits it when it changes.
+# Pulls every published SKILL.md listed in imageat.com's agent-skills index (generated
+# from the live API catalog) and commits when anything changes.
 name: Sync SKILL.md
 
 on:
@@ -15,15 +15,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Download SKILL.md
-        run: curl -fsSL https://imageat.com/.well-known/agent-skills/imageat/SKILL.md -o skills/imageat/SKILL.md
+      - name: Download skills
+        run: |
+          for name in $(curl -fsSL https://imageat.com/.well-known/agent-skills/index.json | jq -r '.skills[].name'); do
+            mkdir -p "skills/$name"
+            curl -fsSL "https://imageat.com/.well-known/agent-skills/$name/SKILL.md" -o "skills/$name/SKILL.md"
+          done
       - name: Commit if changed
         run: |
-          if git diff --quiet; then
-            echo "SKILL.md is up to date"
+          git add skills
+          if git diff --cached --quiet; then
+            echo "Skills are up to date"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
-          git commit -am "Sync SKILL.md from imageat.com"
+          git commit -m "Sync skills from imageat.com"
           git push

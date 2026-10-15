@@ -1,8 +1,13 @@
 # imageat skills
 
-Official [agent skill](https://imageat.com/skills) for [imageat](https://imageat.com). It teaches
-Claude Code, Codex, Cursor and other agents that read `SKILL.md` to generate images, edit
-photos, create videos and check your balance through the imageat API.
+Official [agent skills](https://imageat.com/skills) for [imageat](https://imageat.com):
+
+- **imageat**: teaches Claude Code, Codex, Cursor and other agents that read `SKILL.md` to
+  generate images, edit photos, create videos and check your balance through the imageat API.
+- **imageat-explainer-video**: turns a topic into a finished narrated explainer video
+  (researched script, style-locked clips, voiceover, subtitles, one mp4). Works best with the
+  [imageat MCP server](https://imageat.com/mcp). See the
+  [AI explainer video generator](https://imageat.com/ai-explainer-video-generator).
 
 ## Install
 
