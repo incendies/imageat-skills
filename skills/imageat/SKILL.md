@@ -34,16 +34,24 @@ Models (live list: `GET https://imageat.com/api/v1/models/images`):
 
 - `nano-banana-pro` (Nano Banana Pro): High-fidelity generation and editing with up to 4K output. From $0.40 / image.
 - `nano-banana-2.1` (Nano Banana 2.1): Google's newest Nano Banana: up to 4K, extreme 8:1 to 1:8 ratios, up to 14 references, and optional web search grounding. From $0.16 / image.
+- `krea-3` (Krea 3): Krea's newest model: aesthetic generation with prompt expansion, faithful instruction edits, up to 4 references, 1K or 2K. From $0.06 / image.
 - `nano-banana-2` (Nano Banana 2): Fast, cost-efficient generation for iterative creative work. From $0.16 / image.
 - `gpt-image-2.5` (GPT Image 2.5): OpenAI's newest image model: five quality tiers, scoped edits, and transparent cut-outs. Add gpt-image-2.5-sunburst for the slower, finer-detail variant. From $0.02 / image.
 - `midjourney-v8` (Midjourney V8): Midjourney V8.2 with stylize, chaos, weird, and style references. Every run returns 4 images; native 2K HD optional. From $0.18 / 4 images.
 - `gpt-image-2` (GPT Image 2): Precise instruction following with selectable quality tiers. From $0.02 / image.
 - `seedream-5.0-pro` (Seedream 5 Pro): High-fidelity ByteDance generation and reference-guided editing. From $0.14 / image.
+- `nano-banana-2-lite` (Nano Banana 2 Lite): The cheapest Nano Banana, for drafts, thumbnails and bulk runs. From $0.08 / image.
+- `nano-banana` (Nano Banana): The original Nano Banana (Gemini 2.5 Flash Image) for quick generation and edits. From $0.16 / image.
+- `seedream-5.0-lite` (Seedream 5 Lite): Faster, cheaper Seedream 5 for generation and reference-guided edits. From $0.07 / image.
+- `krea-2-large` (Krea 2 Large): Krea 2 text-to-image with up to 10 style references. One image per request. $0.13 / image.
+- `krea-2-medium` (Krea 2 Medium): Lighter Krea 2 with the same style references. One image per request. $0.07 / image.
 
 - GPT Image models accept `quality`; GPT Image 2.5 also takes `xhigh`/`max` and
   `transparentBackground` (needs png or webp output).
 - Nano Banana 2.1 takes up to 14 `images`, extreme ratios (`8:1` to `1:8`, plus `auto`)
   and `enableWebSearch` for grounding in live web results.
+- Krea 3 (`krea-3`) renders 1K or 2K (4K requests render at 2K) and takes up to 4 `images`;
+  each reference is billed like extra output pixels, so send only the ones the edit needs.
 - Midjourney V8 (`midjourney-v8`) always returns 4 images per run (read `urls`; `numImages`
   is ignored) and takes ~2 minutes. `resolution` is 1K or 2K (native HD); optional `stylize`
   (0-1000), `chaos` (0-100), `weird` (0-3000), `seed` and `styleReferenceUrl`.
@@ -91,6 +99,20 @@ Models (live list: `GET https://imageat.com/api/v1/models/videos`):
 - `seedance25` (Seedance 2.5): Text, image, reference, or frame-controlled video; 4–30s · 480p/720p; From $0.83.
 - `midjourney-v8` (Midjourney V8): Image-to-video, 4 clips per run; 4 × 5s · 480p/720p; From $0.18.
 - `pixverse` (Pixverse V6): Text/image video with optional audio; 1–15s · up to 1080p; From $0.09/sec.
+- `veo` (Veo 3.1 Fast): Default model. Text or image video; 4/6/8s · 720p/1080p/4K · audio; From $1.20.
+- `veo-lite` (Veo 3.1 Lite): Text, image, or first/last-frame video; 4/6/8s · 720p/1080p · audio; From $0.40.
+- `sora` (Sora): Text or image video; 4/8/12s · 720p/1080p; From $0.80.
+- `kling` (Kling 2.6): Text or image video; 5/10s · 720p/1080p · optional audio; From $0.70.
+- `kling3` (Kling 3.0): Text or image video; 3–15s · 720p/1080p/4K · optional audio; From $0.34/sec.
+- `kling3-omni` (Kling 3.0 Omni): Text or image video; 3–15s · 720p/1080p/4K · optional audio; From $0.42/sec.
+- `grok` (Grok Video): Text or image video; 1–15s · 480p/720p; From $0.10/sec.
+- `grok-1-5` (Grok Video 1.5): Image-to-video; 1–15s · 480p/720p; From $0.17/sec.
+- `seedance2` (Seedance 2.0): Text, image, or reference-image video; 4–15s · 480p/720p/1080p; From $1.08.
+- `seedance2-mini` (Seedance 2.0 Mini): Text, image, or reference-image video; 5/10/15s · 480p/720p; From $0.36.
+- `gemini-omni` (Gemini Omni Flash): Text or image video; 5/10s · 720p; From $2.12.
+- `happyhorse` (Happy Horse 1.0): Text or image video; 5/10/15s · 720p/1080p; From $1.40.
+- `happyhorse-ref` (Happy Horse 1.0 Reference): Reference-image video (referenceImageUrls); 5/10/15s · 720p/1080p; From $1.40.
+- `flux3` (FLUX 3 Video): Text or image video; 5–20s · 720p/1080p; From $1.70.
 
 - Image-to-video: pass `imageUrl` (first frame), or `firstFrameUrl` + `lastFrameUrl`.
 - `midjourney-v8` is image-to-video only: `imageUrl` is required, `resolution` is 480p or 720p,
