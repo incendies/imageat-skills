@@ -1,0 +1,11 @@
+{
+  "name": "imageat",
+  "description": "Generate and edit AI images, create videos and narrated explainers, and add voiceovers with imageat from your agent.",
+  "version": "1.0.0",
+  "author": { "name": "imageat", "email": "info@imageat.com" },
+  "homepage": "https://imageat.com/mcp",
+  "repository": "https://github.com/incendies/imageat-skills",
+  "license": "MIT",
+  "keywords": ["image-generation", "image-editing", "video-generation", "text-to-speech", "mcp", "imageat"],
+  "logo": "assets/logo.svg"
+}

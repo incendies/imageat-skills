@@ -18,7 +18,13 @@ Official [agent skills](https://imageat.com/skills) for [imageat](https://imagea
 /plugin install imageat@imageat
 ```
 
-**Codex, Cursor, Gemini CLI, OpenCode and other agents**
+**Cursor**
+
+Install **imageat** from the Cursor marketplace. The plugin adds both skills and the hosted
+[imageat MCP server](https://imageat.com/mcp) (`https://mcp.imageat.com/mcp`); Cursor opens an
+imageat sign-in the first time a tool runs, so the MCP tools need no API key.
+
+**Codex, Gemini CLI, OpenCode and other agents**
 
 ```
 npx skills add incendies/imageat-skills
