@@ -42,7 +42,6 @@ Models (live list: `GET https://imageat.com/api/v1/models/images`):
 - `seedream-5.0-pro` (Seedream 5 Pro): High-fidelity ByteDance generation and reference-guided editing. From $0.14 / image.
 - `nano-banana-2-lite` (Nano Banana 2 Lite): The cheapest Nano Banana, for drafts, thumbnails and bulk runs. From $0.08 / image.
 - `nano-banana` (Nano Banana): The original Nano Banana (Gemini 2.5 Flash Image) for quick generation and edits. From $0.16 / image.
-- `seedream-5.0-lite` (Seedream 5 Lite): Faster, cheaper Seedream 5 for generation and reference-guided edits. From $0.07 / image.
 - `krea-2-large` (Krea 2 Large): Krea 2 text-to-image with up to 10 style references. One image per request. $0.13 / image.
 - `krea-2-medium` (Krea 2 Medium): Lighter Krea 2 with the same style references. One image per request. $0.07 / image.
 
@@ -94,8 +93,9 @@ Stop when `status` is `completed` (read `url`) or `failed`. Cancel with `POST ht
 
 Models (live list: `GET https://imageat.com/api/v1/models/videos`):
 
+- `flux3-max` (FLUX 3 Max): Text, image, or first/last-frame video (firstFrameUrl + lastFrameUrl); 5–20s · 720p/1080p · audio; From $1.71.
 - `wan3` (Wan 3.0): Text, image, first/last-frame or reference-image video; 2–30s · 480p/720p/1080p · audio; From $0.20.
-- `minimax-h3-max` (MiniMax H3 Max): Text, image, or first/last-frame video; 5–15s · 480p/768p; From $0.25.
+- `minimax-h3-max` (MiniMax H3 Max): Text, image, or first/last-frame video; 5–15s · 480p/768p; From $0.50.
 - `seedance25` (Seedance 2.5): Text, image, reference, or frame-controlled video; 4–30s · 480p/720p; From $0.83.
 - `midjourney-v8` (Midjourney V8): Image-to-video, 4 clips per run; 4 × 5s · 480p/720p; From $0.18.
 - `pixverse` (Pixverse V6): Text/image video with optional audio; 1–15s · up to 1080p; From $0.09/sec.
