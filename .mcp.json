@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "imageat": {
+      "type": "http",
+      "url": "https://mcp.imageat.com/mcp"
+    }
+  }
+}
