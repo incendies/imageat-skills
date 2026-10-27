@@ -1,0 +1,10 @@
+{
+  "name": "imageat",
+  "version": "1.0.0",
+  "description": "AI image generation and editing, video, narrated explainers and voiceovers for agents via the hosted imageat MCP server.",
+  "mcpServers": {
+    "imageat": {
+      "httpUrl": "https://mcp.imageat.com/mcp"
+    }
+  }
+}
