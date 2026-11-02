@@ -119,6 +119,25 @@ Models (live list: `GET https://imageat.com/api/v1/models/videos`):
 - `midjourney-v8` is image-to-video only: `imageUrl` is required, `resolution` is 480p or 720p,
   `motion` is low or high. Each run returns 4 five-second clips in `urls`.
 
+## Post to social accounts (Social Hub)
+
+The user connects Instagram, Facebook Pages, LinkedIn, X and others at
+https://imageat.com/social-hub. Posting spends no credits but needs an imageat plan.
+
+1. `GET https://imageat.com/api/v1/social/accounts` lists connected accounts with `can_publish` and a `reason` when false.
+2. `POST https://imageat.com/api/v1/social/posts` with `account_ids`, `caption` (optional per-account `captions`),
+   media as `generation_id` or `media_url` (JPEG/PNG/WebP or MP4), and `mode`:
+   `draft` (default), `schedule` (+ `scheduled_at`, ISO 8601, `timezone`) or `publish`.
+3. `GET https://imageat.com/api/v1/social/posts/{id}` shows each destination's status and `published_url`.
+   Videos may stay `publishing` for a minute while the platform processes them.
+4. `DELETE https://imageat.com/api/v1/social/posts/{id}` cancels a draft or scheduled post.
+5. `GET https://imageat.com/api/v1/social/autopilots` and `POST https://imageat.com/api/v1/social/autopilots/{id}/queue` with
+   `items: [{ caption, generation_id | media_url }]` fill the user's weekly posting slots.
+
+Publishing is public: show the user the caption, media and accounts and get their OK before
+`publish` or `schedule`. A `402` with `code: "plan_required"` means the plan does not cover
+posting (or that account); send the user to https://imageat.com/pricing.
+
 ## Check balance
 
 `GET https://imageat.com/api/v1/credits` returns the account's API balance in USD (and spendable web
