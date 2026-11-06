@@ -93,6 +93,7 @@ Stop when `status` is `completed` (read `url`) or `failed`. Cancel with `POST ht
 
 Models (live list: `GET https://imageat.com/api/v1/models/videos`):
 
+- `gemini-omni-12` (Gemini Omni Flash 1.2): Text, image, first/last-frame (≤10s) or reference-image (up to 10) video, 16:9 or 9:16; 3–15s · 360p/720p/1080p/4K · audio; From $0.055/sec.
 - `kling4` (Kling 4.0): Text, image, first/last-frame, reference-image (up to 10) or video edit (mode edit-video, billed per source second); 3–30s · 720p/1080p; From $0.32/sec.
 - `flux3-max` (FLUX 3 Max): Text, image, or first/last-frame video (firstFrameUrl + lastFrameUrl); 5–20s · 720p/1080p · audio; From $1.71.
 - `wan3` (Wan 3.0): Text, image, first/last-frame or reference-image video; 2–30s · 480p/720p/1080p · audio; From $0.20.
