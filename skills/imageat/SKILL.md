@@ -39,6 +39,7 @@ Models (live list: `GET https://imageat.com/api/v1/models/images`):
 - `gpt-image-2.5` (GPT Image 2.5): OpenAI's newest image model: five quality tiers, scoped edits, and transparent cut-outs. Add gpt-image-2.5-sunburst for the slower, finer-detail variant. From $0.02 / image.
 - `midjourney-v8` (Midjourney V8): Midjourney V8.2 with stylize, chaos, weird, and style references. Every run returns 4 images; native 2K HD optional. From $0.18 / 4 images.
 - `gpt-image-2` (GPT Image 2): Precise instruction following with selectable quality tiers. From $0.02 / image.
+- `kling-image-4` (Kling Image 4.0): Kling's newest image model: 2K or 4K stills and edits with up to 10 reference images for identity and style. From $0.13 / image.
 - `seedream-5.5` (Seedream 5.5): ByteDance's newest Seedream: 1K or 2K generation and edits with up to 10 reference images. From $0.06 / image.
 - `seedream-5.0-pro` (Seedream 5 Pro): High-fidelity ByteDance generation and reference-guided editing. From $0.14 / image.
 - `nano-banana-2-lite` (Nano Banana 2 Lite): The cheapest Nano Banana, for drafts, thumbnails and bulk runs. From $0.08 / image.
